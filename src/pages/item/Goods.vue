@@ -154,6 +154,8 @@
         // 把oldBrand变为null
         this.oldGoods = {};
       },
+
+      //异步转同步，请求成功才会执行下一步，否则不会执行下一步
       async editGoods(oldGoods) {
         // 发起请求，查询商品详情和skus
         oldGoods.spuDetail = await this.$http.loadData("/item/spu/detail/" + oldGoods.id);
